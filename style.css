@@ -1,18 +1,19 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: system-ui, sans-serif;
+:root {
+  --section-space: 80px;
+  --content-width: 1000px;
 }
 
 body {
   background: #0f0f0f;
   color: #ffffff;
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.6;
 }
 
+
 header, section {
-  padding: 60px 20px;
-  max-width: 1000px;
+  padding: var(--section-space) 20px;
+  max-width: var(--content-width);
   margin: auto;
 }
 
@@ -21,23 +22,32 @@ header, section {
 }
 
 .hero h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: -1px;
 }
 
 .hero p {
-  margin: 15px 0;
-  color: #cccccc;
+  font-size: 1.1rem;
+  margin-top: 12px;
+  color: #bdbdbd;
 }
 
+
 .btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 24px;
-  border: 1px solid #ffffff;
-  color: #ffffff;
-  text-decoration: none;
-  border-radius: 6px;
+  margin-top: 28px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.2);
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
+
+.btn:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
 
 .services {
   display: grid;
