@@ -4,34 +4,43 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JK x Studio — Design • Web • Visuals</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+  <!-- HERO -->
   <header class="hero">
-    <h1>JK x Studio</h1>
-    <p>Design • Web • Visuals — made simple.</p>
-    <a href="#contact" class="btn">Contact Us</a>
+    <div class="hero-content fade-up">
+      <h1>JK x Studio</h1>
+      <p>Design • Web • Visuals — crafted for modern brands.</p>
+      <div class="hero-actions">
+        <a href="#services" class="btn primary">View Services</a>
+        <a href="#contact" class="btn outline">Contact Us</a>
+      </div>
+    </div>
   </header>
 
-  <section id="services">
-    <h2>Services</h2>
+  <!-- SERVICES -->
+  <section id="services" class="section">
+    <h2 class="section-title fade-up">Our Services</h2>
 
-    <div class="services">
-      <div>
+    <div class="services-grid">
+      <div class="service-card fade-up">
         <h3>Web & Digital</h3>
         <ul>
           <li>Portfolio Websites</li>
           <li>Landing Pages</li>
-          <li>Website Fixes</li>
+          <li>Website Fixes & Redesigns</li>
         </ul>
       </div>
 
-      <div>
+      <div class="service-card fade-up">
         <h3>Design & Visuals</h3>
         <ul>
           <li>Posters & Creatives</li>
@@ -40,7 +49,7 @@
         </ul>
       </div>
 
-      <div>
+      <div class="service-card fade-up">
         <h3>Content & Assets</h3>
         <ul>
           <li>Presentations</li>
@@ -51,12 +60,37 @@
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: yourmail@email.com</p>
-    <p>Instagram: @yourhandle</p>
-    <a href="https://wa.me/91XXXXXXXXXX" class="btn">WhatsApp Us</a>
+  <!-- WHY US -->
+  <section class="section subtle-bg">
+    <h2 class="section-title fade-up">Why JK x Studio?</h2>
+
+    <div class="why-grid">
+      <div class="why-item fade-up">Clean & modern design</div>
+      <div class="why-item fade-up">Beginner-friendly pricing</div>
+      <div class="why-item fade-up">Fast & reliable delivery</div>
+      <div class="why-item fade-up">Clear communication</div>
+    </div>
   </section>
 
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <h2 class="section-title fade-up">Let’s Work Together</h2>
+    <p class="contact-text fade-up">
+      Have an idea or need a creative solution?  
+      Let’s make it happen.
+    </p>
+
+    <div class="contact-actions fade-up">
+      <a href="mailto:yourmail@email.com" class="btn primary">Email Us</a>
+      <a href="https://wa.me/91XXXXXXXXXX" class="btn outline">WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2026 JK x Studio. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
