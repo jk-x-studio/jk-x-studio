@@ -79,16 +79,39 @@ body {
    BACKGROUND EFFECTS
 ========================= */
 
+/* =========================
+   BACKGROUND EFFECTS
+========================= */
+
 .bg-gradient {
   position: fixed;
   inset: 0;
+  z-index: -2;
+  transition: opacity 0.4s ease;
+}
+
+/* 🌙 DARK THEME */
+body[data-theme="dark"] .bg-gradient {
   background:
     radial-gradient(circle at 20% 20%, rgba(120,119,255,0.25), transparent 40%),
     radial-gradient(circle at 80% 30%, rgba(56,189,248,0.18), transparent 45%),
     radial-gradient(circle at 50% 80%, rgba(168,85,247,0.22), transparent 40%);
   animation: floatGradient 18s ease-in-out infinite alternate;
-  z-index: -2;
 }
+
+/* 🌤️ LIGHT / DAY THEME — SKY */
+body[data-theme="light"] .bg-gradient {
+  background:
+    radial-gradient(circle at 20% 15%, rgba(255,255,255,0.9), transparent 40%),
+    radial-gradient(circle at 80% 25%, rgba(240,245,255,0.9), transparent 45%),
+    linear-gradient(
+      180deg,
+      #dbeafe 0%,
+      #e9e7ff 45%,
+      #ffffff 100%
+    );
+}
+
 
 .bg-noise {
   position: fixed;
@@ -118,14 +141,34 @@ body {
   padding: 40px 20px;
 }
 
-.hero h1 {
-  font-size: clamp(3rem, 6vw, 4rem);
-  font-weight: 700;
-  letter-spacing: -1.5px;
+/* =========================
+   HERO TITLE
+========================= */
+
+/* DARK */
+body[data-theme="dark"] .hero h1 {
   background: linear-gradient(90deg, #ffffff, #b7c6ff, #8be9fd);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* LIGHT — readable + premium */
+body[data-theme="light"] .hero h1 {
+  background: linear-gradient(
+    90deg,
+    #1e3a8a,  /* deep blue */
+    #4338ca,  /* indigo */
+    #2563eb   /* sky blue */
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* soft halo separation */
+  text-shadow:
+    0 2px 6px rgba(255,255,255,0.9),
+    0 8px 20px rgba(37,99,235,0.25);
+}
+
 
 .hero p {
   margin-top: 14px;
@@ -306,10 +349,32 @@ body {
   position: absolute;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(139,92,246,0.35), transparent 60%);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
-  transition: transform 0.1s linear;
+  transition: transform 0.1s linear, background 0.4s ease;
 }
+
+/* DARK */
+body[data-theme="dark"] .hero-glow {
+  background: radial-gradient(circle, rgba(139,92,246,0.35), transparent 60%);
+}
+
+/* LIGHT */
+body[data-theme="light"] .hero-glow {
+  background: radial-gradient(circle, rgba(59,130,246,0.25), transparent 65%);
+}
+
+
+/* ☁️ subtle cloud softness */
+body[data-theme="light"] .hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255,255,255,0.7), transparent 35%),
+    radial-gradient(circle at 70% 30%, rgba(255,255,255,0.6), transparent 40%);
+  pointer-events: none;
+}
+
