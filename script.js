@@ -50,12 +50,7 @@ for (let i = 0; i < count; i++) {
 
 function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  const isLight = document.body.getAttribute('data-theme') === 'light';
-
-ctx.fillStyle = isLight
-  ? 'rgba(120,140,180,0.22)'  // airy sky dots (birds/dust)
-  : 'rgba(255,255,255,0.4)'; // stars
-
+  ctx.fillStyle = 'rgba(255,255,255,0.4)';
 
   particles.forEach(p => {
     p.x += p.dx;
