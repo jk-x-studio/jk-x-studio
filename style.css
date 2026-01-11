@@ -177,3 +177,136 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+
+
+
+
+
+
+
+
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #05060a;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Animated gradient layer */
+.bg-gradient {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(120, 119, 255, 0.25), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(56, 189, 248, 0.18), transparent 45%),
+    radial-gradient(circle at 50% 80%, rgba(168, 85, 247, 0.22), transparent 40%);
+  animation: floatGradient 18s ease-in-out infinite alternate;
+  z-index: -2;
+}
+
+/* Subtle noise for premium feel */
+.bg-noise {
+  position: fixed;
+  inset: 0;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.06;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@keyframes floatGradient {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    transform: scale(1.15) translate(-20px, -30px);
+  }
+}
+
+
+.section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 100px 20px;
+}
+
+.service-card,
+.why-item {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 18px;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover,
+.why-item:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255,255,255,0.4);
+}
+
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 6vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  background: linear-gradient(90deg, #ffffff, #b7c6ff, #8be9fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  margin-top: 14px;
+  color: rgba(255,255,255,0.7);
+}
+
+
+.btn {
+  padding: 14px 30px;
+  border-radius: 999px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+  color: #fff;
+}
+
+.btn.primary:hover {
+  box-shadow: 0 0 30px rgba(139,92,246,0.6);
+  transform: translateY(-2px);
+}
+
+.btn.glass {
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  background: rgba(255,255,255,0.05);
+}
+
+.btn.glass:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.9s ease;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
