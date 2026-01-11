@@ -67,3 +67,14 @@ function animate() {
   requestAnimationFrame(animate);
 }
 animate();
+
+
+/* HERO PARALLAX GLOW */
+const glow = document.querySelector('.hero-glow');
+
+document.addEventListener('mousemove', e => {
+  if (!glow) return;
+  const x = (e.clientX / window.innerWidth - 0.5) * 60;
+  const y = (e.clientY / window.innerHeight - 0.5) * 60;
+  glow.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
+});
